@@ -1,0 +1,26 @@
+Query that returns Passengers who used the bulletin train with train_no 110
+SELECT passenger_name FROM Passenger WHERE passenger_id IN (SELECT passenger_id FROM Passenger WHERE passenger_id IN (SELECT ticket_no FROM Tickets WHERE train_id  IN (SELECT train_id FROM Train  WHERE train_no=110)));
+
+
+
+
+Query that returns which train station Paddington Brown Boarded from
+SELECT station_name FROM Stations WHERE station_id IN(SELECT station_id FROM Tickets WHERE passenger_id IN (SELECT passenger_id FROM Passenger WHERE passenger_name="Paddington Brown"));
+
+
+Query that Returns How many people left for Alberquerque at the end of the month 
+SELECT COUNT(passenger_name) FROM Passenger WHERE passenger_id IN (SELECT passenger_id FROM Tickets WHERE issue_date="31/8/2022" AND  train_id IN (SELECT train_id FROM Train WHERE destination="Alberquerque"));
+
+
+Query that returns How many times the train Torpedo Ben travelled to Boston in August
+SELECT COUNT(destination)  FROM Train WHERE  Train_name= "Torpedo Ben" AND destination="Boston";
+
+Query that returns a Passenger and the date that they travelled on:
+SELECT passenger_name,issue_date FROM Passenger JOIN Tickets WHERE Passenger.passenger_id = Tickets.passenger_id;
+
+Query that returns the passengers and the train that they used
+SELECT passenger_name,train_name FROM Passenger JOIN Train WHERE Passenger.passenger_id = Train.train_id;
+
+
+Query that returns Passengers who paid less than 20,000 
+SELECT passenger_name ||" "|| amount FROM Passenger WHERE amount < 20000;

@@ -1,0 +1,50 @@
+WRITE UP
+RAILWAY MANAGEMENT SYSTEM 
+The database consists of information from two stations in the month of August of 2022
+1.New York Penn Station 
+2.30th Street Station 
+
+
+The train stations have two trains each 
+New York Penn Station has 2 trains :
+1.Bulletin
+2.El Royale
+
+30th Street Station has 2 trains:
+1.Torpedo Ben
+2.Vessel Cavallier
+
+
+New York Penn has a station number - 1
+30th Street Station has  a station number-2
+
+The trains also have train numbers 
+Bulletin -110
+El Royale-130
+Torpedo Ben-140
+Vessel Cavallier-120
+
+Assumptions:
+a)Payment and booking were done physically 
+b)All passengers can only book a maximum of 5 seats 
+c)All passengers are restricted to a maximum of 5 bags 
+d)The amount paid depends on the number of seats booked by a passenger
+e)A train can travel to a given destination at different times on different dates or at different times to a given distination on the same date 
+f) Every train has a set off and arrival time 
+g) One passenger is given only one ticket summarizing the data of the seats they have booked and number of bags and amount they have paid
+
+Special Case:
+The train numbers are like a number plate for the trains .
+passengers can travel using the same train at different times and dates
+Because of this the train number is repeated many times and so we generated a unique id to identify the train in different scenarios .
+
+The station numbers are used to identify the stations but since they were also repeated  due to different passengers using the same station we created a unique station_id To identify the station used in different scenarios like station used on different dates and so on
+
+
+The schema diagram has two pages one showing the connections in plain text and one showing the connections in highlighted text	
+
+
+
+
+
+
